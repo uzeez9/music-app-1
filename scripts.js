@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const previousButton = document.querySelector('.previous');
     const nextButton = document.querySelector('.next');
     const volumeSlider = document.getElementById('volumeSlider');
-    
+
     let isPlaying = false;
     let currentTrackIndex = 0;
     let playlist = [];
@@ -184,12 +184,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     volumeSlider.addEventListener('input', () => {
-        audioPlayer.volume = volumeSlider.value;
+        audioPlayer.volume = parseFloat(volumeSlider.value);
     });
 
-    audioPlayer.volume = volumeSlider.value;
-
     
+    volumeSlider.value = audioPlayer.volume;
+
     updatePlayPauseIcons();
 });
-
